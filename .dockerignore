@@ -1,0 +1,6 @@
+mysql_db/
+php_ma/
+dist/
+Dockerfile
+.git
+docker-compose.yml
