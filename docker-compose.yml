@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   db:
@@ -9,7 +9,7 @@ services:
       - "3306:3306"
     volumes:
       #- mysql-db:/var/lib/mysql
-      - ./mysql_db:/var/lib/mysql
+      - ./mysql_db:/var/lib/mysq
     environment:
       - MYSQL_ROOT_PASSWORD=mysql
       - MYSQL_DATABASE=matricula_DS-20226
@@ -19,6 +19,7 @@ services:
   phpmyadmin:
     depends_on:
       - db
+    container_name: php_ma
     image: phpmyadmin:5.2.0-apache
     restart: always
     ports:
@@ -28,7 +29,6 @@ services:
       - ./php_ma/custom/phpmyadmin/themeName/:/var/www/html/themes/themeName/
     environment:
       - PMA_ARBITRARY=1
-
 #volumes:
 #  mysql-db:
 #    external: true
